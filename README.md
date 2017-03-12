@@ -16,7 +16,7 @@ This project is heavily indebted to [Crafty Vagrant](https://github.com/niceands
 1. Clone the repo to your ~/Sites folder
 
         $ cd ~/Sites
-        $ git clone craft-dev repo
+        $ git clone git@github.com:hisnameisjimmy/craft-homestead-vagrant.git
 
 2. Run the command `bash install.sh` from inside the newly created folder - this will install and set up everything necessary (including Craft) in your project directory. If this is a fresh Craft install, answer 'y' to the prompt about replacing Craft's templates + config, otherwise - if this is an existing project - answer 'n'. Generally, if you use this project internally, you'll install the templates initially (they're useful), and then once you start committing to the project, you'll probably want to remove these install commands for other developers who end up working on it.
 
@@ -31,28 +31,7 @@ This project is heavily indebted to [Crafty Vagrant](https://github.com/niceands
         $  sudo killall -HUP mDNSResponder && dscacheutil -flushcache && sudo apachectl restart
 
 4. Launch vagrant: `vagrant up`
-...and hopefully (after a short wait while your Vagrant machine is set up) your vagrant installation should be all set.
-
-5. Because Craft has a couple issues with the version of php (7.1) and MySQL (5.7) included with Homestead, we need to make an adjustment to my.cnf. We also need to install mcrypt, or Craft won't startup.
-
-   Run `vagrant ssh` from your project folder, and run the following to install mcrypt:
-
-        $ sudo apt-get update
-        $ sudo apt-get install mcrypt php7.0-mcrypt php7.1-mcrypt
-        $ sudo apt-get upgrade
-
-  Then edit the mysql.cnf file to make mysql behave:
-
-        $ sudo vim /etc/mysql/my.cnf
-
-  At the bottom, paste the following:
-
-        [mysqld]
-        sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
-
-  Save the file, then restart mysql:
-
-        $ sudo service mysql restart
+   ...and hopefully (after a short wait while your Vagrant machine is set up) your vagrant installation should be all set.
 
    The webserver should now be accessible from `http://craft-dev.local/`. If Craft backups are present in `/app/craft/storage/backups`, the most recent one will automatically have been used to populate the database. Otherwise, you can install Craft by going to [http://craft-dev.local/admin/install](http://craft-dev.local/admin/install)
 
@@ -66,8 +45,9 @@ Things to change:
 
 * Homestead.yaml
 * .env.example (or .env if you've already installed)
-* /etc/hosts file on your machine
+* /etc/hosts file on your local machine
 * package.json
+& /app/craft/app/config/general.php (change .local to whatever extension you'd like)
 
 ## Usage
 

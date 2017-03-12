@@ -12,12 +12,12 @@ keys:
     - ~/.ssh/id_rsa
 
 folders:
-    - map: ~/Sites/craft-dev
-      to: "/home/vagrant/craft-dev"
+    - map: ~/Sites/craft-homestead-vagrant
+      to: "/home/vagrant/craft-homestead-vagrant"
 
 sites:
     - map: craft-dev.local
-      to: "/home/vagrant/craft-dev/app/public"
+      to: "/home/vagrant/craft-homestead-vagrant/app/public"
 
 databases:
     - homestead

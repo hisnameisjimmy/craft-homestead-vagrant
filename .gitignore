@@ -5,11 +5,18 @@ app/craft/storage/runtime/*
 app/craft/storage/backups/*
 app/craft/storage/userphotos/*
 app/public/assets/*
+app/readme.txt
+app/*
+!app/src*
 
-# Vagrant Specific
+# Vagrant/Homestead/Composer Specific
 # ----------------------------------------------------------------------
 vagrant
 .vagrant
+vendor
+composer.json
+composer.lock
+composer.phar
 
 # Misc files
 # ----------------------------------------------------------------------
