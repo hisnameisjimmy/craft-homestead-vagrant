@@ -1,0 +1,35 @@
+# Miscellaneous Craft
+# ----------------------------------------------------------------------
+app/craft/app/*
+app/craft/storage/runtime/*
+app/craft/storage/backups/*
+app/craft/storage/userphotos/*
+app/public/assets/*
+
+# Vagrant Specific
+# ----------------------------------------------------------------------
+vagrant
+.vagrant
+
+# Misc files
+# ----------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+node_modules/*
+bower_components/*
+.docs
+.env
+.sass-cache
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-workspace
+*.sublime-project
+*.komodoproject
+.komodotools
+_notes
+dwsync.xml
+logs/*

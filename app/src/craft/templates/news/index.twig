@@ -1,0 +1,10 @@
+{#
+ # News index template
+ # -------------------
+ #}
+
+{% extends "_channel/index" %}
+
+{# Section: #}
+{% set sectionHandle = craft.request.firstSegment %}
+{% set section = craft.sections.getSectionByHandle(sectionHandle) %}
